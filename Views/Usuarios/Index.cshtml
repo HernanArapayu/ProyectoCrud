@@ -1,0 +1,38 @@
+@model Usuarios;
+
+<h1 class="Display-1 text-center">Usuarios</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Email</th>
+                    
+                </tr>
+                
+                    @foreach (Usuarios usuario in ViewBag.Usuarios)
+                {
+                    <tr>
+                        <td>@usuario.IdUsuario</td>
+                        <td>@usuario.Nombre</td>
+                        <td>@usuario.Apellido</td>
+                        <td>@usuario.Edad</td>
+                        <td>@usuario.Email</td>
+                        <td><a asp-action="Modificar" asp-controller="Usuarios" class="btn btn-primary" asp-route-id="@usuario.IdUsuario">Modificar</a></td>
+                        <td><a asp-action="Eliminar" asp-controller="Usuarios" class="btn btn-danger" asp-route-id="@usuario.IdUsuario">Eliminar</a></td>
+
+
+                    </tr>
+                    
+                }
+               
+                
+            </table>
+        </div>
+    </div>
+</div>

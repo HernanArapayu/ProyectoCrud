@@ -1,0 +1,45 @@
+@model Usuarios;
+
+<div class="container">
+    <div class="row">
+        <input type="hidden" asp-for="IdUsuario">
+        <div class="col">
+            <form asp-action="guardar" asp-controller="Usuarios" method="POST">
+                <div class="row">
+                    <div class="col form-group">
+                        <label >Nombre</label>
+                        <input type="text" class="form-control" asp-for="Nombre">
+                        <span asp-validation-for="Nombre" style="color:red;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label >Apellido</label>
+                        <input type="text" class="form-control" asp-for="Apellido">
+                        <span asp-validation-for="Apellido" style="color:red;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label >Edad</label>
+                        <input type="text" class="form-control" asp-for="Edad">
+                        <span asp-validation-for="Edad" style="color:red;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label >Email</label>
+                        <input type="text" class="form-control" asp-for="Email">
+                        <span asp-validation-for="Email" style="color:red;"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <input type="submit" class="btn btn-primary" value="Guardar Datos">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
